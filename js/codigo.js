@@ -26,7 +26,8 @@ function adicionar(){
 	if(dato.length!=0){
 	   if(productos.indexOf(dato)<0){	
 	      productos.push(dato);
-	      document.getElementById("listado").innerHTML+=`<div class="fila_productos"><div class='producto_caja'>${dato}</div><div class='papelera' onclick="eliminar(this)">x</div></div>`;
+	      // document.getElementById("listado").innerHTML+=`<div class="fila_productos"><div class='producto_caja'>${dato}</div><div class='papelera' onclick="eliminar(this)">x</div></div>`;
+	      document.getElementById("listado").innerHTML+=`<div class="fila_productos"><div class='producto_caja'>${dato}</div><div class='papelera' onclick="eliminar(this)"><img src='img/cruz.png'></div></div>`;
 	      guardar_localStorage();
 	    }
 	    else{
@@ -56,6 +57,6 @@ function guardar_localStorage(){
 function obtener_localStorage(){
        productos=localStorage.getItem("cadena_ls").split("///");
        for(i=0;i<productos.length; i++){
-       	  document.getElementById("listado").innerHTML+=`<div class="fila_productos"><div class='producto_caja'>${productos[i]}</div><div class='papelera' onclick="eliminar(this)">x</div></div>`
+       	  document.getElementById("listado").innerHTML+=`<div class="fila_productos"><div class='producto_caja'>${productos[i]}</div><div class='papelera' onclick="eliminar(this)"><img src='img/cruz.png'></div></div>`
        }
 }
